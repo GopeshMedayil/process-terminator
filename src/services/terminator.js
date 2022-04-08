@@ -1,9 +1,8 @@
 var child_process = window.require('child_process');
 const pidFromPort = window.require('pid-from-port');
 let pid;
-const terminate = async () => {
+const terminate = async (port) => {
     console.log("in terminate");
-    const port = 3002;
     try {
         pid = await pidFromPort(port);
     }

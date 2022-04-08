@@ -20,14 +20,6 @@ const Title = styled.div`
     `;
 
 const Main = () => {
-    useEffect(() => {
-        async function terminateProcess() {
-            const res = await terminate();
-            console.log(res);
-        }
-        terminateProcess();
-    });
-    //console.log(terminate())
     return (
         <MainContainer>
             <Title>Enter the port</Title>
