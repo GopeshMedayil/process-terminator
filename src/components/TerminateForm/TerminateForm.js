@@ -1,7 +1,12 @@
 
 const TerminateForm = () => {
     return (
-        <h1>Terminate Form</h1>
+        <>
+            <form>
+                <input type="text" name="port" id="port" />
+                <button type="button">Terminate</button>
+            </form>
+        </>
     )
 };
 

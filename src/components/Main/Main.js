@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import styled from 'styled-components';
 import terminate from '../../services/terminator';
+import TerminateForm from '../TerminateForm';
 const MainContainer = styled.div`
     display: flex; 
     flex-direction: column;
@@ -30,6 +31,7 @@ const Main = () => {
     return (
         <MainContainer>
             <Title>Enter the port</Title>
+            <TerminateForm></TerminateForm>
         </MainContainer>
     )
 };
