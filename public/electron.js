@@ -10,6 +10,10 @@ function createWindow() {
         height: 600,
         webPreferences: {
             nodeIntegration: true,
+            nodeIntegrationInWorker: true,
+            nodeIntegrationInSubFrames: true,
+            enableRemoteModule: true,
+            contextIsolation: false
         },
     });
 
@@ -17,7 +21,7 @@ function createWindow() {
     // win.loadFile("index.html");
     win.loadURL(
         isDev
-            ? 'http://localhost:3000'
+            ? 'http://localhost:1545'
             : `file://${path.join(__dirname, '../build/index.html')}`
     );
     // Open the DevTools.

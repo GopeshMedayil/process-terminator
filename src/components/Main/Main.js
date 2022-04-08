@@ -1,13 +1,6 @@
+import { useEffect } from 'react';
 import styled from 'styled-components';
-
-
-const Title = styled.div`
-    font-size: 1em;
-    text-align: center;
-    color: black;
-    margin:0 auto;
-    `;
-
+import terminate from '../../services/terminator';
 const MainContainer = styled.div`
     display: flex; 
     flex-direction: column;
@@ -18,8 +11,22 @@ const MainContainer = styled.div`
     border:1px solid black;
     `;
 
-const Main = () => {
+const Title = styled.div`
+    font-size: 1em;
+    text-align: center;
+    color: black;
+    margin:0 auto;
+    `;
 
+const Main = () => {
+    useEffect(() => {
+        async function terminateProcess() {
+            const res = await terminate();
+            console.log(res);
+        }
+        terminateProcess();
+    });
+    //console.log(terminate())
     return (
         <MainContainer>
             <Title>Enter the port</Title>
