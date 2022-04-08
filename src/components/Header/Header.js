@@ -1,11 +1,23 @@
+import styled from 'styled-components';
+
+const Heading = styled.div`
+    font-size: 1.5em;
+    text-align: center;
+    color: black;
+    background: violet;
+    margin:0 auto;
+  `;
 const Header = () => {
 
     return (
-        <div>
-            <h1>Process Terminator </h1>
+        <>
+            <Heading>
+                <div>Process Terminator</div>
+            </Heading>
+        </>
+    );
 
-        </div>
-    )
+
 };
 
 export default Header;
