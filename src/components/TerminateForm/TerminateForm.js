@@ -2,7 +2,8 @@ import { useRef } from 'react';
 import { useState } from 'react';
 import terminate from './../../services/terminator';
 import styled from 'styled-components';
-
+import { useContext } from 'react';
+import { TerminateContext } from './../../context/TerminateContext';
 const InputBox = styled.input`
 
     margin: 2%;
@@ -45,23 +46,21 @@ const Button = styled.button`
 `;
 
 const TerminateForm = () => {
-    const [port, setPort] = useState('');
+    // const [reuslt, setResults] = useState('');
+    const { setResult } = useContext(TerminateContext);
     let portRef = useRef();
     async function terminateProcess() {
         console.log(portRef.current.value);
         const res = await terminate(portRef.current.value);
         console.log(res);
+        setResult(res);
     }
 
     return (
         <>
             <form>
-                <InputBox type="text" name="port" id="port"
-                    ref={portRef} />
-                {/* // <input type="text" name="port" id="port" */}
-                {/* //     ref={portRef} /> */}
-                <Button onClick={terminateProcess}>Terminate</Button>
-                {/* <button type="button" onClick={terminateProcess}>Terminate</button> */}
+                <InputBox type="text" name="port" id="port" ref={portRef} placeholder="Enter the port" />
+                <Button type="button" onClick={terminateProcess}>Terminate</Button>
             </form >
         </>
     )

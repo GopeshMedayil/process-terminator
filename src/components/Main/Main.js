@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Results from '../Results';
 import TerminateForm from '../TerminateForm';
 
 const MainContainer = styled.div`
@@ -20,6 +21,7 @@ const Main = () => {
         <MainContainer>
             <Title>Enter the port</Title>
             <TerminateForm></TerminateForm>
+            <Results></Results>
         </MainContainer>
     )
 };
