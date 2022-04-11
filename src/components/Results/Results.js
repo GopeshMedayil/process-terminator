@@ -2,11 +2,19 @@ import { useContext } from 'react';
 import { TerminateContext } from './../../context/TerminateContext';
 import styled from 'styled-components';
 
-const Success = styled.div`
-    color:green;
+
+const Alert = styled.div`
+    padding: 20px;
+    color: white;
+    opacity: 1;
+    transition: opacity 0.6s;
+    margin-bottom: 15px;
 `;
-const Error = styled.div`
-    color:red;
+const Success = styled(Alert)`
+    background-color: green;
+`;
+const Error = styled(Alert)`
+    background-color: #f44336;
 `;
 
 const Results = () => {
@@ -15,7 +23,6 @@ const Results = () => {
     return (
         <>
             <h3>Results</h3>
-            {/* {JSON.stringify(result)} */}
             {result ? result.code !== 500 ? <Success>{result.message}</Success> : <Error>{result.message}</Error> : ''}
         </>
 

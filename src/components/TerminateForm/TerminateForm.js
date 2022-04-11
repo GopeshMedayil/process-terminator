@@ -51,15 +51,17 @@ const TerminateForm = () => {
     let portRef = useRef();
     async function terminateProcess() {
         console.log(portRef.current.value);
-        const res = await terminate(portRef.current.value);
-        console.log(res);
-        setResult(res);
+        await terminate(portRef.current.value, function (res) {
+            console.log(res);
+            setResult(res);
+        });
+
     }
 
     return (
         <>
             <form>
-                <InputBox type="text" name="port" id="port" ref={portRef} placeholder="Enter the port" />
+                <InputBox type="number" name="port" id="port" ref={portRef} placeholder="Enter the port" />
                 <Button type="button" onClick={terminateProcess}>Terminate</Button>
             </form >
         </>

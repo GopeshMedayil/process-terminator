@@ -19,7 +19,7 @@ const Title = styled.div`
 const Main = () => {
     return (
         <MainContainer>
-            <Title>Enter the port</Title>
+            {/* <Title>Enter the port</Title> */}
             <TerminateForm></TerminateForm>
             <Results></Results>
         </MainContainer>
