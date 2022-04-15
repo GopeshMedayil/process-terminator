@@ -8,6 +8,7 @@ function App() {
   const [result, setResult] = useState("");
   return (
     <div className="App">
+      {/* <span>learn react</span> */}
       <TerminateContext.Provider value={{ result, setResult }}>
         <Header></Header>
         <Main></Main>

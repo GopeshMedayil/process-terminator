@@ -24,7 +24,7 @@ const Header = () => {
     return (
         <>
             <Heading>
-                <div>Process Terminator</div>
+                Process Terminator
             </Heading>
         </>
     );
