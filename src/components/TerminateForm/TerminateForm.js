@@ -46,7 +46,6 @@ const Button = styled.button`
 `;
 
 const TerminateForm = () => {
-    // const [reuslt, setResults] = useState('');
     const { setResult } = useContext(TerminateContext);
     let portRef = useRef();
     async function terminateProcess() {
@@ -55,7 +54,6 @@ const TerminateForm = () => {
             console.log(res);
             setResult(res);
         });
-
     }
 
     return (
