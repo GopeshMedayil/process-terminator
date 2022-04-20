@@ -18,6 +18,7 @@ describe("TerminateForm", () => {
     });
     test('should terminate the port', async () => {
         render(<TerminateForm />);
+        let setResult = jest.fn();
         const inputElement = await screen.findByPlaceholderText('Enter the port');
         const buttonElement = await screen.findByText('Terminate');
         inputElement.value = '8080';

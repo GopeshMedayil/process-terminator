@@ -7,7 +7,7 @@ const terminate = async (port, callback) => {
         pid = await pidFromPort(Number(port));
     }
     catch (err) {
-        console.log("no process running on port");
+        //console.log("no process running on port");
         let result = {
             code: 500,
             message: `No process running on port ${port}`
@@ -33,20 +33,7 @@ const terminate = async (port, callback) => {
 
         }
     })
-    // child_process.exec(`netstat -ano | findstr :${port}`, (err, stdout, stderr) => {
-    //     if (err ) {
-    //         //throw err;
-    //         console.log('stderr', err)
-    //         console.log("No running port")
-    //     }
 
-    //     //console.log('stdout', stdout);
-    //     const res = stdout.split(`\n`).map(s => s.trim());
-    //     const pid = res.map(s => s.split(` `).pop()).filter(s => s).pop();
-
-    //     console.log(pid);
-
-    // });
 };
 
 export default terminate;

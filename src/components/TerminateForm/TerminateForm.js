@@ -49,9 +49,9 @@ const TerminateForm = () => {
     const { setResult } = useContext(TerminateContext);
     let portRef = useRef();
     async function terminateProcess() {
-        console.log(portRef.current.value);
+        //console.log(portRef.current.value);
         await terminate(portRef.current.value, function (res) {
-            console.log(res);
+            //console.log(res);
             setResult(res);
         });
     }
